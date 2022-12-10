@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /*.txt$
+Disallow: /*.json$
+
+Sitemap: https://potion4.github.io/sitemap

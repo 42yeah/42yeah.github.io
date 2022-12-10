@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh">
+  {% include headers.html %}
+  <body>
+    <div id="contentPane" class="huge-page real main">
+      <h1 class="no-pilcrow"><a href="/">Frame of 42yeah</a></h1>
+      <section>
+        <div class="simple-border mt-3"></div>
+        <h2>Site Defunct</h2>
+        {% include translator.html %}
+        <div class="simple-border"></div>
+        {% include toc.html html=content sanitize=true class="toc" %}
+        <h2>{{ page.title }}</h2>
+        {{ content }}
+
+
+      </section>
+      {% include commentary.html %}
+    </div>
+  </body>
+</html>

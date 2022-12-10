@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh">
+  {% include headers.html %}
+  <body>
+    <div id="contentPane" class="huge-page real main">
+      <h1 class="no-pilcrow"><a href="/">Frame of 42yeah</a></h1>
+
+      <section>
+        <div class="simple-border mt-3"></div>
+        <h2>Defunct</h2>
+        {% include translator.html %}
+        <div class="simple-border"></div>
+
+        <h2>{{ page.category }}</h2>
+        <div class="d-flex" style="flex-wrap: wrap; margin-top: 2rem;">
+          {% for post in site.categories[page.category] %}
+          <div class="d-flex justify left block-mum" style="">
+            <div class="block white">
+              <div>
+                <h3 class="no-pilcrow" style="background-color: orange; color: white;">{{ post.title }}</h3>
+                {{ post.excerpt }}
+              </div>
+              <a href="{{ post.url }}" class="big-btn outline">阅读</a>
+            </div>
+          </div>
+
+          {% endfor %}
+      </section>
+      {% include commentary.html %}
+    </div>
+  </body>
+</html>

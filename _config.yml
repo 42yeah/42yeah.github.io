@@ -1,0 +1,31 @@
+# theme: screw-themes-i-am-not-using-them
+title: Frame of 42yeah
+sidebar: false
+comments: true
+layout: default
+highlighter: rouge
+markdown: kramdown
+
+url: "https://potion4.github.io"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+feed:
+  path: atom.xml
+
+rss:
+author: 42yeah
+
+collections:
+  category:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"

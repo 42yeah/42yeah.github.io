@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh">
+  {% include headers.html %}
+  <body>
+    <div id="contentPane" class="real main huge-page">
+      <div class="divide">
+        <div class="lil-sidebar">
+          <div class="super-title">
+            <h3 class="text centerify no-pilcrow">
+              <svg class="svg-logo" viewBox="0 0 13 13">
+                <rect x="0" y="0" width="13" height="13"
+                      style="fill:transparent; stroke:orange; stroke-width:5; fill-opacity:0.1; stroke-opacity:0.9"></rect>
+              </svg><br />
+              Frame of 42yeah
+            </h3>
+          </div>
+          <div class="simple-border mb-1"></div>
+
+          <h3>Defunct</h3>
+          {% include translator.html %}
+
+          <h3>Hark, visitor!</h3>
+          <p>
+            欢迎来到 <a href="https://github.com/POTION4">42yeah</a> 的个人博客！
+          </p>
+
+          <h3>分类</h3>
+          <div>
+            {% for category in site.categories %}
+              <a href="/category/{{ category | first }}">{{ category | first }}</a>
+            {% endfor %}
+          </div>
+
+          <h3>友情</h3>
+          <div>
+            我有一些朋友，他们也有博客。
+            <div class="friend-box">
+              <a href="https://zzkdev.github.io" class="big-btn half">
+                杀不死的坏蛋
+              </a>
+              <a href="https://gamejilu.com" class="big-btn half">
+                脆饼
+              </a>
+              <a href="http://www.moonsekai.xyz" class="big-btn half">
+                moon
+              </a>
+              <a href="https://chenzon.github.io/" class="big-btn half">
+                Chane
+              </a>
+            </div>
+          </div>
+
+          <h3>想联系我？</h3>
+          <div>
+            我就跟一般的人一样，有海量的联系方式。你可以通过我的 <a href="mailto:potion@live.cn">邮箱</a> 找到我，当然也可以通过我的 QQ：<span class="important-stuff">214346692</span> ，或者微信：<span class="important-stuff">EMPOWEREDBYCOLA</span> 。<br />
+            这是我的 <a href="https://github.com/POTION4">Github 地址</a>，这是我的 <a href="https://twitter.com/potion4">Twitter</a> ，这是我的 <a href="https://coding.net/u/42yeah">Coding</a>，这是我的 <a href="https://www.paypal.me/42yeah">PayPal</a>。
+          </div>
+
+          <h3><img src="/assets/rss.svg" alt="RSS" width="14px" height="14px"> RSS</h3>
+          <div>
+            <a href="/atom.xml" class="big-btn">订阅</a>
+          </div>
+
+          <h3>瞎吹</h3>
+          <div>
+            <span id="quote">Beauty MATTERS</span><br />
+          </div>
+        </div>
+        <div class="content">
+          <h1 class="no-pilcrow"><img src="/assets/pencil.png" width="20" height="20"> 最近发布</h1>
+
+          <div style="display: flex; flex-wrap: wrap;">
+            {% for i in (0..7) %}
+            {% if i >= site.posts.length %}
+            {% break %}
+            {% endif %}
+            {% assign post = site.posts[i] %}
+
+            <div class="d-flex justify left main-block-mum">
+              <div class="block white">
+                <div class="fill-width">
+                  <h3 style="color: orange">{{ post.title }}</h3>
+                  {{ post.excerpt }}
+                </div>
+                <div class="fill-width">
+                  <a href="{{ post.url }}" class="big-btn outline">阅读</a>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+
+            <div class="d-flex justify left main-block-mum">
+              <div class="center-block white">
+                <div>
+                  <h3 class="no-pilcrow" style="color: gray">- 看分类找更之前的 -</h3>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="text centerify" style="margin-top: 2rem;"> 不使用任何主题，原生态，无污染。 Copyleft 2019, 42yeah</div>
+    </div>
+  </body>
+</html>
